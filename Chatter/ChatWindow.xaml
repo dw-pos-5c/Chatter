@@ -1,0 +1,32 @@
+﻿<Window x:Class="Chatter.ChatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chatter"
+        mc:Ignorable="d"
+        Title="ChatWindow" Height="450" Width="400"
+        Closed="ChatWindow_OnClosed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Name="lblName" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="50" Background="DeepSkyBlue"></Label>
+        <ListView Grid.Row="1" Name="lvMessages"></ListView>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0">Msg:</Label>
+            <TextBox Name="tbMessage" Grid.Column="1"></TextBox>
+            <Button Click="SendMessage" Grid.Column="2">Send</Button>
+        </Grid>
+    </Grid>
+</Window>
